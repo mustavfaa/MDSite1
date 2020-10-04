@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bootstrap-Core-CSS -->
+    <!--/ Style-CSS -->{% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <!--// Style-CSS -->
+    <!-- font-awesome-icons -->{% load static %}
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Bootstrap-Core-CSS -->
+    <!--/ Style-CSS -->{% load static %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.1.8.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-scrolltofixed.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.isotope.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/wow.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/classie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/magnific-popup.js' %}"></script>
+    <script src="{% static 'contactform/contactform.js' %}"></script>
+   <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+  </head>
+<body>
+  
+
+  <div class="header">
+    <div id="mainmenu" style="">
+      <ul>
+        <li class="hhhh"><a  href="{% url 'index'  %}">{%load static%}
+              <img  class="logo" src="{%static 'images/logo.png'%}"></a></li>
+        <li><a class="ina" href="#" class="textmenu">ТОП</a></li>
+        <li ><a class="ina" href="#" class="textmenu">ВК</a></li>
+       <li><a href="#"class="ina" class="textmenu">ТЕЛЕГРАМ</a></li>
+       <li><form class="form-inline my-2 my-lg-0" action="{%url 'index'%}" >
+          <input style="margin-top: 12px;"  class="form-control mr-sm-2" type="search" placeholder="Search" label="Search" name="search">
+          <button style="margin-top: 12px;" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form></li>
+
+       
+       <style>
+         #in{
+          font-size: 10px;
+         }
+         #in1{
+          margin-top: 90px;
+         }
+
+       </style>
+        
+          
+       
+      </div>
+        </li>
+         
+      </ul>
+      <style>
+      .form-search {
+        margin-top: 10px;
+        margin:10px 0px; 
+        display: inline-block;
+        border-bottom: 1px solid;
+      }
+      .ss{
+        margin-top:20px; 
+      }
+      .form-search input {
+        all: unset;
+      }
+      </style>
+
+  </div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+       {% for stat in page.object_list %}
+
+
+           <div class="content_item {{stat.type1}}">
+             
+                <div id="g" class="col-md-12" style="height: 300px;width: 2000px">
+
+
+                          <div class="col-md-7" style="height: 300px;width: 1000px;">
+                            <a href="{% url 'base' stat.Url %}" class="title"><h3 class="h21" style="font-size: 23px;">{{stat.title}}</h3></a>
+                            <p style="padding:15px 10px 10px 0px;    font-family: Roboto,sans-serif;font-size: 12px;" class="h21">{{stat.description}}</p>
+                            <div style="margin-bottom: 30px;">
+                              <div class="actions">
+                                <a href="{% url 'base' stat.Url %}" style="" class="btn btn-green">СКАЧАТЬ </a>
+                              </div>
+                            </div>
+                          </div>  
+
+
+                          <div class="col-md-5">
+                            {%load static%}
+                            <img class="img1" src="{{stat.img.url}}">
+                            
+                          </div>
+                
+                </div>
+
+           </div>     
+
+
+       {% endfor %}  
+
+
+
+      
+<!--
+       {% for stat in page.object_list %}
+
+
+           <div class="content_item {{stat.type1}}">
+             
+                <div id="g" class="col-md-12" style="height: 300px;width: 2000px">
+
+
+                          <div class="col-md-7" style="height: 300px;width: 1000px;">
+                            <a href="{% url 'base' stat.Url %}" class="title"><h3 class="h21" style="font-size: 23px;">{{stat.title}}</h3></a>
+                            <p style="padding:15px 10px 10px 0px;    font-family: Roboto,sans-serif;font-size: 12px;" class="h21">{{stat.description}}</p>
+                            <div style="margin-bottom: 30px;">
+                              <div class="actions">
+                                <a href="{% url 'base' stat.Url %}" style="" class="btn btn-green">СКАЧАТЬ </a>
+                              </div>
+                            </div>
+                          </div>  
+
+
+                          <div class="col-md-5">
+                            {%load static%}
+                            <img class="img1" src="{{stat.img.url}}">
+                            
+                          </div>
+                
+                </div>
+
+           </div>     
+
+
+       {% endfor %}  
+
+
+
+       
+       {% for mi in filtere %}
+
+
+      
+             
+                <div id="g" class="col-md-12" style="height: 300px;width: 2000px">
+
+
+                          <div class="col-md-7" style="height: 300px;width: 1000px;">
+                            <a href="{% url 'base' mi.Url %}" class="title"><h3 class="h21" style="font-size: 23px;">{{mi.title}}</h3></a>
+                            <p style="padding:15px 10px 10px 0px;    font-family: Roboto,sans-serif;font-size: 12px;" class="h21">{{mi.description}}</p>
+                            <div style="margin-bottom: 30px;">
+                              <div class="actions">
+                                <a href="{% url 'base' mi.Url %}" style="" class="btn btn-green">СКАЧАТЬ </a>
+                              </div>
+                            </div>
+                          </div>  
+
+
+                          <div class="col-md-5">
+                            {%load static%}
+                            <img class="img1" src="{{mi.img.url}}">
+                            
+                          </div>
+                
+                </div>
+
+
+
+
+       {% endfor %} --> 
+
+       <style type="text/css">.actions {
+    right: 0;
+bottom: 0;margin-bottom: 10px;
+position: absolute;}
+
+.actions a{border: 1px white solid;color: white;}
+.actions a:hover{border: 1px white solid;color: #14171a;background-color: white;}
+</style>
+<div class="container" style="margin-top: 50px;">
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              
+              {% for n in page.paginator.page_range %}
+              <li class="page-item {% if not prev_page_url %} disabled {% endif %}">
+                <a style="background-color: #14171a; border:#14171a;color: white;border-right: white;" class="page-link" href="{{prev_page_url}}">Previous</a>
+              </li>
+
+                    {%if page.number == n %}
+
+                          <li  class="page-item">
+                            <a  class="page-link" href="?page={{n}}">{{n}}</a>
+                          </li>
+
+
+                        {% elif n > page.number|add:-3 and n < page.number|add:3 %}
+
+
+                          <li  class="page-item">
+                            <a  class="page-link" href="?page={{n}}">{{n}}</a>
+                          </li>
+
+                    {%endif%}
+
+
+              {% endfor %}
+             
+
+              
+              <li  class="page-item {% if not next_page_url %} disabled {% endif %}">
+                <a style="background-color: #14171a; border:#14171a;color: white;border-right: white;"  class="page-link" href="{{next_page_url}}">Next</a>
+              </li>
+
+
+
+            </ul>
+          </nav>
+</div>      
+
+<style type="text/css">
+
+                    .page-link{
+                      background-color: #14171a; border:#14171a;color: white;border-right: white
+                    }
+                    .page-link:hover{
+                      background-color: white; border:white;color: #14171a;
+                    }
+                    .gpss{background-position: 100px 40px;
+                      position: relative;
+                    }
+                    a.button15 {background-position: 100px 40px;
+                    display: inline-block;
+                    font-family: arial,sans-serif;
+                    font-size: 11px;
+                    font-weight: bold;
+                    color: rgb(68,68,68);
+                    text-decoration: none;
+                    user-select: none;
+                    padding: .2em 1.2em;
+                    outline: none;
+                    border: 1px solid rgba(0,0,0,.1);
+                    border-radius: 2px;
+                    background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);
+                    transition: all .218s ease 0s;
+                  }
+                  a.button15:hover {
+                    color: white;
+                    border: green;
+                    background: green;
+                    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+                  }
+                  a.button15:active {
+                    color: rgb(51,51,51);
+                    border: 1px solid rgb(204,204,204);
+                    background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
+                    box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+                  }
+        </style>
+ 
+
+      
+
+     
+      
+    </div>
+   
+
+
+<div class="col-sm-3" style="height: 1500px; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
+    <h3>КАТЕГОРИИ</h3>
+     <div id="kati">
+        <ul>
+          {% load mptt_tags %}
+            
+                {% recursetree category %}
+                    <li>
+                        <img class="img2" src="{{node.img.url}}"><a href="/category/{{ node.id }}/{{ node.slug }}"> {{ node.name }}</a><ul class="children">
+                        {% if not node.is_leaf_node %}
+                            
+                              <a href="#" class="category_item" id="soft">
+                                {%load static%}
+                                <img class="img2" src="{{node.img.url}}"> 
+                              {{ children }}</a>
+                            
+                        {% endif %}</ul>
+                    </li>
+                {% endrecursetree %}
+          
+            {% if user.is_authenticated %}
+          
+         
+
+          
+
+
+
+          
+        </ul>
+      </div>
+       
+      <div>
+        <li style="text-align: center;"><span style="color: white;">Привет,{{request.user}}</span> <a style="color: white;" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
+       {% else %}
+         <li style="color: white;" id="in1"><a  style="margin-top: 20px;" id="in" href="{% url 'login'%}?next={{request.path}}">ВОЙТИ</a>
+          <a style="color: white;" style="margin-top: 90px;" id="in" href="{% url 'register'%}">РЕГИСТРАЦИЯ</a></li> 
+
+          
+       {% endif %}
+
+      </div>
+
+
+
+          {% load contact_tags %}
+        <div class="w3layouts-news-letter" style="margin-top: 60px; background-color: #808080;">
+                    {% contact_form %}
+        </div>
+
+  
+
+  
+
+</div>
+
+</div>
+</div>
+
+<div class="header" style="margin-top: 60px;">
+   {% include 'include/footer.html' %}
+</div>
+  
+
+</body>
+</html>

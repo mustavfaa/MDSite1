@@ -1,0 +1,100 @@
+{% extends 'list.html' %}
+
+{% block content %}
+
+      
+
+      
+       {% for stat in page.object_list %}
+
+
+           <div class="content_item {{stat.type1}}">
+             
+                <div id="g" class="col-md-12" style="height: 300px;width: 2000px">
+
+
+                          <div class="col-md-7" style="height: 300px;width: 1000px;">
+                            <a href="{% url 'base' stat.Url %}" class="title"><h3 class="h21" style="font-size: 23px;">{{stat.title}}</h3></a>
+                            <p style="padding:15px 10px 10px 0px;    font-family: Roboto,sans-serif;font-size: 12px;" class="h21">{{stat.description}}</p>
+                            <div style="margin-bottom: 30px;">
+                              <div class="actions">
+                                <a href="{% url 'base' stat.Url %}" style="" class="btn btn-green">СКАЧАТЬ </a>
+                              </div>
+                            </div>
+                          </div>  
+
+
+                          <div class="col-md-5">
+                            {%load static%}
+                            <img class="img1" src="{{stat.img.url}}">
+                            
+                          </div>
+                
+                </div>
+
+           </div>     
+
+
+       {% endfor %}  
+
+{% endblock %}
+
+{% block conten %}
+
+ {% for n in page.paginator.page_range %}
+              <li class="page-item {% if not prev_page_url %} disabled {% endif %}">
+                <a style="background-color: #14171a; border:#14171a;color: white;border-right: white;" class="page-link" href="{{prev_page_url}}">Previous</a>
+              </li>
+
+                    {%if page.number == n %}
+
+                          <li  class="page-item">
+                            <a  class="page-link" href="?page={{n}}">{{n}}</a>
+                          </li>
+
+
+                        {% elif n > page.number|add:-3 and n < page.number|add:3 %}
+
+
+                          <li  class="page-item">
+                            <a  class="page-link" href="?page={{n}}">{{n}}</a>
+                          </li>
+
+                    {%endif%}
+
+
+{% endfor %}
+{% endblock %}
+<!--
+       
+       {% for mi in filtere %}
+
+
+      
+             
+                <div id="g" class="col-md-12" style="height: 300px;width: 2000px">
+
+
+                          <div class="col-md-7" style="height: 300px;width: 1000px;">
+                            <a href="{% url 'base' mi.Url %}" class="title"><h3 class="h21" style="font-size: 23px;">{{mi.title}}</h3></a>
+                            <p style="padding:15px 10px 10px 0px;    font-family: Roboto,sans-serif;font-size: 12px;" class="h21">{{mi.description}}</p>
+                            <div style="margin-bottom: 30px;">
+                              <div class="actions">
+                                <a href="{% url 'base' mi.Url %}" style="" class="btn btn-green">СКАЧАТЬ </a>
+                              </div>
+                            </div>
+                          </div>  
+
+
+                          <div class="col-md-5">
+                            {%load static%}
+                            <img class="img1" src="{{mi.img.url}}">
+                            
+                          </div>
+                
+                </div>
+
+
+
+
+       {% endfor %} --> 

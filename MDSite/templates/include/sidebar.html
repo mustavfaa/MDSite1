@@ -1,0 +1,37 @@
+<h3>КАТЕГОРИИ</h3>
+     <div id="kati">
+        <ul>
+          <li><a href="#">
+            {%load static%}
+            <img class="img2" src="{%static 'images/secu.png'%}"> КИБЕРБЕЗОПАСНОСТЬ
+          </li>
+          <li><a href="#">
+            {%load static%}
+            <img class="img2" src="{%static 'images/soft.png'%}"> 
+          СОФТ ДЛЯ WINDOWS</a></li>
+          <li><a href="#">
+            {%load static%}
+            <img class="img2" src="{%static 'images/python.png'%}"> 
+          РАЗРАБОТЧИКУ</a></li>
+          <li><a class="hg" href="#">
+            {%load static%}
+            <img class="img2" src="{%static 'images/ps.jpg'%}"> 
+          ДИЗАЙН</a></li>
+          <li><a href="#">
+            {%load static%}
+            <img class="img2" src="{%static 'images/dr.png'%}"> 
+
+          ДРУГОЕ</a></li>
+          
+        </ul>
+      </div>
+       
+          {% load contact_tags %}
+        <div class="w3layouts-news-letter" style="margin-top: 60px; background-color: #808080;">
+                    {% contact_form %}
+        </div>
+
+  
+
+  </div>
+</div>

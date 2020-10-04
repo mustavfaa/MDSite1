@@ -1,0 +1,23 @@
+<p id="down" style="  position: absolute;  
+    right: 10px;
+    bottom: -80px;
+    "><button class="download" id="fff" style="background-color: #181e23; border:#181e23;color: white;;padding: 5px; 
+                 "  >Скачать файл</button><p>
+              <style type="text/css">
+                
+              </style>
+              <link rel="stylesheet" href="">
+              <link rel="stylesheet" href="">
+
+              <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+              <script>
+              $('.download').on('click', function(){
+                var link = document.createElement('a');
+                {%load static%}
+                link.setAttribute('href', '{{stat.file.url}}');
+                {%load static%}
+                link.setAttribute('download', '{{stat.file.url}}');
+                link.click();
+                return false;
+              });
+              </script>    

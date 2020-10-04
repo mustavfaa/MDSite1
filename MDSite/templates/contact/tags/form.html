@@ -1,0 +1,64 @@
+
+
+<div class="gp">
+<h4 class="footer-title text-uppercase  mb-lg-4 mb-3">
+    Newsletter</h4>
+
+<h6 >By subscribing to our mailing list you will always
+    get latest news and updates from us.</h6>
+<form action="{% url 'contact' %}" method="post" class="w3layouts-newsletter">
+    {% csrf_token %}
+    {{ contact_form }}<br>
+    <button class="btn1 btn"><span class="fa fa-paper-plane-o" aria-hidden="true"></span>
+    </button>
+</form>
+</div>
+<style>
+	h4{
+    color: black;
+    text-align: center;
+}
+.editContent{
+    border-color: black ;
+    margin-top: 10px;
+    border-radius: 20px;
+   height: 50px;
+    background-color: white;
+    width: 250px;
+
+}
+.editContent:hover{
+    border-color: orange;
+    color: black;
+  
+    
+
+     border-radius: 20px;
+    margin-top: 10px;
+    
+    
+
+}
+
+h6{
+    color: black ;
+   
+}
+span{
+    color:black;
+   
+    margin-left :110px;
+}
+span:hover{
+    color:orange;
+   
+    margin-left :110px;
+}
+.gp{
+	padding: 40px 3px;
+    padding: 
+}
+{
+    margin-top: 3px;
+}
+</style>

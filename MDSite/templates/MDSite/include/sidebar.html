@@ -1,0 +1,33 @@
+
+
+<h3>КАТЕГОРИИ</h3>
+     <div id="kati">
+        <ul>
+          {% load mptt_tags %}
+            
+                {% recursetree category %}
+                    <li>
+                        <img class="img2" src="{{node.img.url}}"><a href="/category/{{ node.id }}/{{ node.slug }}"> {{ node.name }}</a><ul class="children">
+                        {% if not node.is_leaf_node %}
+                            
+                              <a href="#" class="category_item" id="soft">
+                                {%load static%}
+                                <img class="img2" src="{{node.img.url}}"> 
+                              {{ children }}</a>
+                            
+                        {% endif %}</ul>
+                    </li>
+                {% endrecursetree %}
+          
+        </ul>
+      </div>
+       
+          {% load contact_tags %}
+        <div class="w3layouts-news-letter" style="margin-top: 60px; background-color: #808080;">
+                    {% contact_form %}
+        </div>
+
+  
+
+  </div>
+</div>
